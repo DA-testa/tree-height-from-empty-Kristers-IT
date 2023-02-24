@@ -19,7 +19,7 @@ def compute_height(elementu_skaits, vertibas):
       max_height = max(max_height,height)
     
     return max_height
-
+   
 
 def main():
 
