@@ -42,7 +42,7 @@ def main():
     skaitli = [int(skaitli) for skaitli in skaitli.split()]
     vertibas = np.array(skaitli)
     max_height = compute_height(elementu_skaits, vertibas)
-
+ 
     print(max_height)
     
 sys.setrecursionlimit(10**7)  
