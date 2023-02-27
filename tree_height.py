@@ -4,7 +4,7 @@ import threading
 import numpy as np
 import urllib.request
 import io
-
+ 
 
 def compute_height(elementu_skaits, vertibas):
     # Write this function
