@@ -2,8 +2,6 @@
 import sys
 import threading
 import numpy as np 
-import urllib.request
-import io
  
 
 def compute_height(elementu_skaits, vertibas):
@@ -26,19 +24,18 @@ def main():
     text = input()
     if text.startswith('I'):
         elementu_skaits = int(input("Ievadi elementu skaitu: "))
-        skaitli = input("Ievadiet vērtības: ")
+        vertibas = np.asarray(list(map(int,input("Ievadiet vērtības: ").split())))
     elif text.startswith('F'):
         nosaukums = input() 
-        if 'a' or 'A' in nosaukums:
-           return
-        f = open("./test/" + nosaukums, "r")
-        for rinda in f.readlines():
-           elementu_skaits = rinda[0]
-           skaitli = rinda[1]
-   
-    vertibas = np.zeros(elementu_skaits, dtype=int)
-    skaitli = [int(skaitli) for skaitli in skaitli.split()]
-    vertibas = np.array(skaitli)
+        #if 'a' or 'A' in nosaukums:
+           #return
+        fails = open("./test/" + nosaukums, "r")
+        elementu_skaits = int(fails.readline())
+
+        vertibas = np.asarray(list(map(int,fails.readline().split())))
+        #skaitli = [int(skaitli) for skaitli in skaitli.split()] 
+    
+    
     max_height = compute_height(elementu_skaits, vertibas)
  
     print(max_height)
