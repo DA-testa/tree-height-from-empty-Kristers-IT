@@ -28,7 +28,7 @@ def main():
         elementu_skaits = int(input("Ievadi elementu skaitu: "))
         skaitli = input("Ievadiet vērtības: ")
     elif text.startswith('F'):
-        nosaukums = input("Faila nosaukums: ") 
+        nosaukums = input() 
         if 'a' or 'A' in nosaukums:
            return
         with urllib.request.urlopen(nosaukums) as response:
