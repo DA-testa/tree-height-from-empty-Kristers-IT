@@ -31,7 +31,7 @@ def main():
         elementu_skaits = int(input("Ievadi elementu skaitu: "))
         vertibas = np.asarray(list(map(int,input("Ievadiet vērtības: ").split())))
     elif text.startswith('F'):
-        nosaukums = input() 
+        nosaukums = input("Ievadi faila nosaukumu: ") 
         if 'a' in nosaukums:
            return
         fails = open("./test/" + nosaukums, "r")
