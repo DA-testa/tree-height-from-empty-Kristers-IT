@@ -6,18 +6,20 @@ import numpy as np
 
 def compute_height(elementu_skaits, vertibas):
     # Write this function
-    max_height = 0
-  
-    for virsotne in range(elementu_skaits):
-      height = 0
-      i = virsotne
-      while i != -1:
-        height = height + 1
-        i = vertibas[i] 
-      max_height = max(max_height,height)
     
+  
+    max_height = 0
+    for virsotne in range(elementu_skaits):
+        height = get_height(virsotne, vertibas)
+        max_height = max(max_height, height)
+        
     return max_height
-   
+
+def get_height(virsotne, vertibas):
+    if virsotne == -1:
+        return 0
+    else:
+        return 1 + get_height(vertibas[virsotne], vertibas)
 
 def main():
 
