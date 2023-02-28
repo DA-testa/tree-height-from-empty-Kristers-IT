@@ -31,12 +31,10 @@ def main():
         nosaukums = input() 
         if 'a' or 'A' in nosaukums:
            return
-        with urllib.request.urlopen(nosaukums) as response:
-            dati = response.read().decode()
-            f = io.StringIO(dati)
-            for rinda in f.readlines():
-                elementu_skaits = rinda[0]
-                skaitli = rinda[1]
+        f = open("./test/" + nosaukums, "r")
+        for rinda in f.readlines():
+           elementu_skaits = rinda[0]
+           skaitli = rinda[1]
    
     vertibas = np.zeros(elementu_skaits, dtype=int)
     skaitli = [int(skaitli) for skaitli in skaitli.split()]
