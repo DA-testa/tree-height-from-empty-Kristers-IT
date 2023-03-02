@@ -5,24 +5,38 @@ import numpy as np
  
 def compute_height(elementu_skaits, vertibas):
 
+    # python3
+import sys
+import threading
+import numpy as np 
+ 
+def compute_height(elementu_skaits, vertibas):
+
     max_height = 0
-    augstums = [0] * elementu_skaits
-    for virsotne in range(elementu_skaits):
-      height = get_height(virsotne, vertibas, augstums)
+    saraksts = []
+
+    for j in range(elementu_skaits):
+        saraksts.append(j)
+
+    for i in range(elementu_skaits):
+      height = get_height(i, vertibas, saraksts)
+
       if height > max_height:
         max_height = height
         
     return max_height
 
-def get_height(virsotne, vertibas, augstums):
+def get_height(i, vertibas, saraksts):
 
-    if augstums[virsotne] != 0:
-        return augstums[virsotne]
-    if vertibas[virsotne] == -1:
-        augstums[virsotne] = 1
+    if vertibas[i] == -1:
+        return saraksts[i]
+    
+    elif saraksts[i] != 0:
+        return saraksts[i]
+    
     else:
-        augstums[virsotne] = get_height(vertibas[virsotne], vertibas, augstums) + 1
-    return augstums[virsotne]
+        saraksts[i] = get_height(vertibas[i], vertibas, saraksts) + 1
+    return saraksts[i]
 
 def main():
 
@@ -30,6 +44,7 @@ def main():
     if text.startswith('I'):
         elementu_skaits = int(input("Ievadi elementu skaitu: "))
         vertibas = np.asarray(list(map(int,input("Ievadiet vērtības: ").split())))
+
     elif text.startswith('F'):
         nosaukums = input("Ievadi faila nosaukumu: ") 
         if 'a' in nosaukums:
@@ -40,7 +55,7 @@ def main():
     
     max_height = compute_height(elementu_skaits, vertibas)
  
-    print(max_height)
+    print(max_height + 1)
     
 sys.setrecursionlimit(10**7)  
 threading.stack_size(2**27)   
