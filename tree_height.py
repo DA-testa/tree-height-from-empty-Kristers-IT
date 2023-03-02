@@ -5,13 +5,6 @@ import numpy as np
  
 def compute_height(elementu_skaits, vertibas):
 
-    # python3
-import sys
-import threading
-import numpy as np 
- 
-def compute_height(elementu_skaits, vertibas):
-
     max_height = 0
     saraksts = []
 
