@@ -7,7 +7,7 @@ def compute_height(elementu_skaits, vertibas):
 
     max_height = 0
     for i in range(elementu_skaits):
-      saraksts.append(i)
+      saraksts.append(0)
 
     for i in range(elementu_skaits):
       height = get_height(i, vertibas, saraksts)
