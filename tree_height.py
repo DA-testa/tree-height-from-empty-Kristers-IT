@@ -6,7 +6,8 @@ import numpy as np
 def compute_height(elementu_skaits, vertibas):
 
     max_height = 0
-    saraksts = [0] * elementu_skaits
+    for i in range(elementu_skaits):
+      saraksts.append(i)
 
     for i in range(elementu_skaits):
       height = get_height(i, vertibas, saraksts)
